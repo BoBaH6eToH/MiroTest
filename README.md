@@ -19,6 +19,7 @@ assuming that all clients work with the same board.
   ### 3. Technology:
     3.1 Java, Spring Boot, Maven
     3.2 H2 DB 
+    3.3 Swagger UI
     
   
   
