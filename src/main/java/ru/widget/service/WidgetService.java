@@ -1,13 +1,16 @@
 package ru.widget.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import ru.widget.dto.WidgetDto;
 import ru.widget.entity.WidgetEntity;
 
 import java.util.List;
 
+/**
+ * JavaDoc
+ */
 public interface WidgetService {
-
-    void create(int value);
 
     WidgetDto createWidget(WidgetDto newWidget);
 
@@ -15,6 +18,10 @@ public interface WidgetService {
 
     WidgetDto getWidgetById(Long id);
 
-    List<WidgetDto> getWidgets();
+    WidgetDto getWidgetByZ(Integer z);
+
+    Page<WidgetDto> getWidgets(Pageable pageable);
+
+    WidgetDto updateWidget(WidgetDto updatedWidget);
 
 }
