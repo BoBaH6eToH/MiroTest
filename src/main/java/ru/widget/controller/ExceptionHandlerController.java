@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ru.widget.exception.WidgetNotFoundException;
 import ru.widget.exception.WidgetWithoutIdException;
 
-import java.net.SocketTimeoutException;
-
+/**
+ * Exception controller for requests to get widgets
+ */
 @ControllerAdvice
 public class ExceptionHandlerController {
 

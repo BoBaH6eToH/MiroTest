@@ -24,21 +24,25 @@ public class WidgetController {
         widgetService.createWidget(newWidget);
     }
 
+    @ApiOperation(value = "Delete widget", notes = "Removing an existing widget by id")
     @DeleteMapping("/delete")
     public void deleteWidgetById(Long id) {
         widgetService.deleteWidgetById(id);
     }
 
+    @ApiOperation(value = "Create widget", notes = "Create new widget with id")
     @GetMapping("/{id}")
     public WidgetDto create(@PathVariable Long id) {
         return widgetService.getWidgetById(id);
     }
 
+    @ApiOperation(value = "Get by Z", notes = "Get widget by zIndex")
     @GetMapping
     public WidgetDto getWidgetByZ(@PathVariable Integer z) {
         return widgetService.getWidgetByZ(z);
     }
 
+    @ApiOperation(value = "Get list", notes = "Get pageable list ordered by zIndex")
     @GetMapping("/list")
     public Page<WidgetDto> getList(@ApiParam(value = "page", required = true, defaultValue = "0")
                                         @RequestParam("page") int page,
@@ -48,6 +52,7 @@ public class WidgetController {
         return widgetService.getWidgets(pageable);
     }
 
+    @ApiOperation(value = "Update widget", notes = "Update widget")
     @PutMapping("/update")
     public WidgetDto updateWidget(@RequestBody WidgetDto updatedWidget) {
         return widgetService.updateWidget(updatedWidget);
